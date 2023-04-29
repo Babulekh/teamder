@@ -6,7 +6,8 @@ const {
     getUsers, 
     getUserById, 
     updateUser, 
-    deleteUser 
+    deleteUser,
+    findUserByName,
 } = require('../controllers/userController');
 
 
@@ -15,5 +16,8 @@ router.get('/users', getUsers);
 router.get('/users/:id', getUserById);
 router.put('/users/:id', updateUser);
 router.delete('/users/:id', deleteUser);
+
+// поиск пользователя
+router.post('/users/findByName', findUserByName);
 
 module.exports = router;

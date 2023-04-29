@@ -79,3 +79,17 @@ exports.updateUser = async (req, res) => {
 		res.status(500).json({ message: 'Ошибка сервера' });
 	}
 }
+
+exports.findUserByName = async (req, res) => {
+	try {
+		const { name } = req.body;
+		const user = await User.findOne({ name });
+		if (!user) {
+			return res.status(404).json({ message: 'User not found' });
+		}
+		res.status(200).json({ id: user._id });
+	} catch (err) {
+		console.error(err.message);
+		res.status(500).json({ message: 'Server error' });
+	}
+};
