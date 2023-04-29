@@ -3,9 +3,10 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue'
 import ProjectsList from '@/components/ProjectsList.vue'
 
-export default {
+export default defineComponent({
   components: { ProjectsList }
-}
+})
 </script>

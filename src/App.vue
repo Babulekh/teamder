@@ -1,18 +1,17 @@
-<script setup lang="js">
-import { RouterLink, RouterView } from 'vue-router';
-export default {}
-</script>
-
 <template>
   <header>
     <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/profile">Profile</RouterLink>
+    <RouterLink to="/profile/Babulekh">Profile</RouterLink>
   </header>
   <wrapper>
     <RouterView />
   </wrapper>
   <footer></footer>
 </template>
+
+<script>
+import { RouterLink, RouterView } from 'vue-router'
+</script>
 
 <style scoped>
 header {
