@@ -1,8 +1,8 @@
 <template>
-  <div class="">
-    <ul>
-      <li v-for="repo in list">{{ repo.name }}</li>
-    </ul>
+  <div class="projectList">
+    <div class="projectList__list">
+      <div class="projectList__project" v-for="repo in list">{{ repo.name }}</div>
+    </div>
   </div>
 </template>
 
@@ -25,4 +25,14 @@ export default defineComponent({
 })
 </script>
 
-<style></style>
+<style>
+.projectList__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.projectList__project {
+  margin-bottom: 8px;
+  padding: 0 80px;
+}
+</style>

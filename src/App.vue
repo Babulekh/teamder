@@ -1,7 +1,17 @@
 <template>
-  <header>
-    <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/profile/Babulekh">Profile</RouterLink>
+  <header class="header">
+    <div class="logo">Teamder</div>
+    <div class="userCard">
+      <div class="avatar"></div>
+      <div class="userCard__info">
+        <div class="userCard__name">Babulekh</div>
+        <div class="userCard__role">Frontend web developer</div>
+      </div>
+    </div>
+    <menu class="headerMenu">
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/profile/Babulekh">Profile</RouterLink>
+    </menu>
   </header>
   <wrapper>
     <RouterView />
@@ -14,55 +24,28 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-nav {
+.header {
+  height: 100vh;
   width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+  top: 0;
+  position: sticky;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
+.logo {
+  margin-bottom: 40px;
 }
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
+.userCard {
+  margin-bottom: 80px;
 }
 
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+.headerMenu {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
 }
 
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+.headerMenu .router-link-active {
+  font-weight: bold;
 }
 </style>
