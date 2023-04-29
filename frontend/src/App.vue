@@ -4,8 +4,15 @@
     <div class="userCard">
       <div class="avatar"></div>
       <div class="userCard__info">
-        <div class="userCard__name">Babulekh</div>
-        <div class="userCard__role">Frontend web developer</div>
+        <div class="userCard__name">{{ getUserName }}</div>
+        <div class="userCard__role">{{ getUserBio }}</div>
+        <div class="userCard__skills">
+          <br>
+          <p>Скиллы</p>
+          <div class="userCard__skill" v-for="(skill) in getUserSkills">
+            {{ skill }}
+          </div>
+        </div>
       </div>
     </div>
     <menu class="headerMenu">
@@ -29,7 +36,18 @@ import TitleBlock from '@/components/TitleBlock.vue'
 export default {
   components: {
     TitleBlock
-  }
+  },
+  computed: {
+    getUserName() {
+      return this.$store.getters.getUserName
+    },
+    getUserBio() {
+      return this.$store.getters.getUserBio
+    },
+    getUserSkills() {
+      return this.$store.getters.getUserSkills
+    }
+  },
 }
 </script>
 
