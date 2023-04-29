@@ -61,7 +61,7 @@ export default {
     async setUser(userId) {
       try {
         const response = await axios.get(`http://localhost:3000/api/users/${userId}`)
-        this.$store.commit('setUserId', response.data.id)
+        this.$store.commit('setUserId', response.data._id)
         this.$store.commit('setUserName', response.data.name)
         this.$store.commit('setUserBio', response.data.description)
         this.$store.commit('setUserSkills', response.data.skills)

@@ -23,6 +23,11 @@ const router = createRouter({
       path: '/auth',
       name: 'Авторизация',
       component: () => import('@/views/AuthView.vue')
+    },
+    {
+      path: '/projectDetail/:id',
+      name: 'Подробно',
+      component: () => import('@/views/ProjectDetailView.vue')
     }
   ]
 })

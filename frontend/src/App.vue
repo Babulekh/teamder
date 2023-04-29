@@ -17,7 +17,7 @@
     </div>
     <menu class="headerMenu">
       <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/profile/Babulekh">Profile</RouterLink>
+      <RouterLink :to="`/profile/${getUserName}`">Profile</RouterLink>
     </menu>
   </header>
   <main>
