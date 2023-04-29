@@ -12,7 +12,7 @@ export default defineConfig({
     host: "0.0.0.0",
     hmr: {
       protocol: 'ws',
-      host: '0.0.0.0',
+      host: 'localhost',
     }
   },
   resolve: {
