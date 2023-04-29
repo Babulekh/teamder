@@ -9,11 +9,6 @@ export default defineConfig({
   plugins: [vue(), vueJsx()],
   server: {
     port: 8081,
-    host: "0.0.0.0",
-    hmr: {
-      protocol: 'ws',
-      host: 'localhost',
-    }
   },
   resolve: {
     alias: {

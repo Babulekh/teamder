@@ -1,16 +1,6 @@
 version: '3.8'
 
 services:
-  frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-    ports:
-      - "8081:8081"
-    volumes:
-      - ./frontend/src:/usr/app/src
-    command: npm run dev
-
   backend:
     build:
       context: ./backend
