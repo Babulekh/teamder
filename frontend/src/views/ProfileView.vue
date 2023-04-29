@@ -10,8 +10,8 @@
         <textarea v-model="projectDescription"></textarea>
       </p>
       <p>
-        <b>Ссылка на гитхаб</b><br />
-        <input type="text" v-model="projectLink" />
+        <b>Название вашего репозитория в гитхабе</b><br />
+        <input type="text" v-model="repoName" />
       </p>
       <p>
         <b>Ссылка на картинку</b><br />
@@ -39,8 +39,7 @@
       </div>
     </div>
 
-    <h2>Проекты из GitHub</h2>
-    <ProjectsList :name="$store.state.userName" />
+    <!-- <ProjectsList :name="$store.state.userName" /> -->
   </div>
 </template>
 
@@ -55,7 +54,7 @@ export default {
       projectTitle: '',
       projectImage: '',
       projectDescription: '',
-      projectLink: '',
+      repoName: '',
       userSkills: [''],
       projectList: []
     }
@@ -74,7 +73,7 @@ export default {
           description: this.projectDescription,
           creator: this.userId,
           skills: this.userSkills,
-          githubLink: this.projectLink,
+          githubLink: this.repoName,
           images: [this.projectImage]
         })
 

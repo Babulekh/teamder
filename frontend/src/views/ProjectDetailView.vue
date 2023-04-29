@@ -10,17 +10,25 @@
     </div>
     <p>Created by: {{ project.creator }}</p>
     <p>Created at: {{ project.dateCreated }}</p>
-    <p><a :href="project.githubLink">Link to Github project</a></p>
+    <p>
+      <a :href="`https://github.com/${projectOwner}/${project.githubLink}`">
+        Link to Github project
+      </a>
+    </p>
+    <div class="readme" v-html="readme"></div>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+import { marked } from 'marked'
 
 export default {
   data() {
     return {
       project: {},
+      projectOwner: '',
+      rawReadme: ''
     }
   },
   async mounted() {
@@ -30,6 +38,27 @@ export default {
       this.project = response.data
     } catch (error) {
       console.error(error)
+    }
+
+    try {
+      const response = await axios.get(`http://localhost:3000/api/users/${this.project.creator}`)
+      this.projectOwner = response.data.name
+    } catch (error) {
+      console.log(`не удалось сохранить данные, статус: ${error}`)
+    }
+
+    try {
+      const response = await axios.get(
+        `https://raw.githubusercontent.com/${this.projectOwner}/${this.project.githubLink}/main/README.md`
+      )
+      this.rawReadme = response.data
+    } catch (error) {
+      console.error(error)
+    }
+  },
+  computed: {
+    readme() {
+      return marked(this.rawReadme)
     }
   }
 }
