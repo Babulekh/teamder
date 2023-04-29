@@ -5,3 +5,5 @@
 *.njsproj
 *.sln
 *.sw?
+
+mongo
