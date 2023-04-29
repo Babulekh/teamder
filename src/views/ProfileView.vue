@@ -1,9 +1,7 @@
 <template>
-  <div class="profile">
-    {{ $route.params.username }}
-  </div>
+  <div class="profile"></div>
   <div class="projects">
-    <ProjectsList :name="$route.params.username" />
+    <ProjectsList :name="$route.params.finalCrumb" />
   </div>
 </template>
 

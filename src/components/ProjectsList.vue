@@ -1,15 +1,15 @@
 <template>
   <div class="projectList">
     <div class="projectList__list">
-      <div class="projectList__project" v-for="repo in list">{{ repo.name }}</div>
+      <div class="projectList__project" v-for="repo in list">
+        <RouterLink :to="`/project/${repo.owner.login}/${repo.name}`">{{ repo.name }}</RouterLink>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import { defineComponent } from 'vue'
-
-export default defineComponent({
+export default {
   props: {
     name: String
   },
@@ -22,7 +22,7 @@ export default defineComponent({
     const rawList = await fetch(`https://api.github.com/users/${this.$props.name}/repos`)
     this.list = await rawList.json()
   }
-})
+}
 </script>
 
 <style>

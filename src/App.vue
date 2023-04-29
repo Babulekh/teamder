@@ -13,22 +13,33 @@
       <RouterLink to="/profile/Babulekh">Profile</RouterLink>
     </menu>
   </header>
-  <wrapper>
-    <RouterView />
-  </wrapper>
+  <main>
+    <div>
+      <TitleBlock :title="$route.params.finalCrumb || $route.name" />
+      <RouterView />
+    </div>
+  </main>
   <footer></footer>
 </template>
 
 <script>
 import { RouterLink, RouterView } from 'vue-router'
+import TitleBlock from '@/components/TitleBlock.vue'
+
+export default {
+  components: {
+    TitleBlock
+  }
+}
 </script>
 
 <style scoped>
 .header {
-  height: 100vh;
   width: 100%;
-  top: 0;
+  height: 100vh;
+  padding: 20px;
   position: sticky;
+  top: 0;
 }
 
 .logo {
