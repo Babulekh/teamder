@@ -14,8 +14,8 @@
     </menu>
   </header>
   <main>
-    <div>
-      <TitleBlock :title="$route.params.finalCrumb || $route.name" />
+    <TitleBlock :title="$route.params.finalCrumb || $route.name" />
+    <div class="content">
       <RouterView />
     </div>
   </main>
@@ -40,6 +40,7 @@ export default {
   padding: 20px;
   position: sticky;
   top: 0;
+  box-shadow: 3px 3px 3px #f3f1fb;
 }
 
 .logo {
@@ -58,5 +59,9 @@ export default {
 
 .headerMenu .router-link-active {
   font-weight: bold;
+}
+
+.content {
+  padding: 0 80px;
 }
 </style>

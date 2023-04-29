@@ -33,6 +33,5 @@ export default {
 
 .projectList__project {
   margin-bottom: 8px;
-  padding: 0 80px;
 }
 </style>

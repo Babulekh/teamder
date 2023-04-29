@@ -1,11 +1,11 @@
 @import './base.css';
 
 #app {
-  width: 1280px;
+  width: 100vw;
   min-height: 100vh;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 280px 1fr;
   font-weight: normal;
 }
 

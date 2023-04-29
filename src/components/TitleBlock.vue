@@ -18,6 +18,7 @@ export default {
 .titleBlock {
   width: 100%;
   height: 160px;
+  margin-bottom: 40px;
   display: flex;
   align-items: center;
   padding-left: 76px;
