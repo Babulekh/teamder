@@ -1,9 +1,11 @@
-<script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
-</script>
-
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <ProjectsList name="Babulekh" />
 </template>
+
+<script>
+import ProjectsList from '@/components/ProjectsList.vue'
+
+export default {
+  components: { ProjectsList }
+}
+</script>
