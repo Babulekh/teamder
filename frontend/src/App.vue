@@ -10,7 +10,8 @@
     </div>
     <menu class="headerMenu">
       <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/profile/Babulekh">Profile</RouterLink>
+      <RouterLink :to="`/profile/${getUserName}`">Profile</RouterLink>
+      <RouterLink to="/news">Рекомендации</RouterLink>
     </menu>
   </header>
   <main>

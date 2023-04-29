@@ -79,3 +79,18 @@ exports.deleteProject = async (req, res) => {
 		res.status(500).json({ message: 'Could not delete project' });
 	}
 };
+
+exports.getProjectsByCreatorId = async (req, res) => {
+  try {
+    const creatorId = req.params.creatorId;
+
+    // используем метод find для поиска проектов по id создателя
+    const projects = await Project.find({ creator: creatorId });
+
+    // возвращаем найденные проекты
+    res.json(projects);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+}}
+

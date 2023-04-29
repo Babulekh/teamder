@@ -18,6 +18,21 @@ const router = createRouter({
       path: '/project/:username/:finalCrumb',
       name: 'Проект',
       component: () => import('@/views/ProjectView.vue')
+    },
+    {
+      path: '/auth',
+      name: 'Авторизация',
+      component: () => import('@/views/AuthView.vue')
+    },
+    {
+      path: '/projectDetail/:id',
+      name: 'Подробно',
+      component: () => import('@/views/ProjectDetailView.vue')
+    },
+    {
+      path: '/news',
+      name: 'Рекомендации',
+      component: () => import('@/views/NewsView.vue')
     }
   ]
 })
